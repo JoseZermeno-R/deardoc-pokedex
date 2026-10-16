@@ -11,6 +11,8 @@
   },
   "scripts": {
     "dev": "concurrently -n api,web -c blue,magenta \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "data:fetch": "npm run data:fetch -w backend",
+    "seed": "npm run seed -w backend",
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces",
@@ -21,5 +23,9 @@
   "devDependencies": {
     "concurrently": "^10.0.6",
     "prettier": "^3.9.10"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.2": true
   }
 }

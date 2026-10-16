@@ -7,7 +7,7 @@ dist-ssr
 coverage
 *.tsbuildinfo
 
-# Local database (rebuilt from backend/data/pokemon.json on startup)
+# Local database
 *.sqlite
 
 # Env and logs

@@ -1,0 +1,208 @@
+{
+  "species": {
+    "id": 386,
+    "name": "deoxys",
+    "names": [
+      {
+        "name": "Deoxys",
+        "language": {
+          "name": "es",
+          "url": "https://pokeapi.co/api/v2/language/7/"
+        }
+      },
+      {
+        "name": "Deoxys",
+        "language": {
+          "name": "en",
+          "url": "https://pokeapi.co/api/v2/language/9/"
+        }
+      },
+      {
+        "name": "デオキシス",
+        "language": {
+          "name": "ja",
+          "url": "https://pokeapi.co/api/v2/language/11/"
+        }
+      }
+    ],
+    "genera": [
+      {
+        "genus": "Pokémon ADN",
+        "language": {
+          "name": "es",
+          "url": "https://pokeapi.co/api/v2/language/7/"
+        }
+      },
+      {
+        "genus": "DNA Pokémon",
+        "language": {
+          "name": "en",
+          "url": "https://pokeapi.co/api/v2/language/9/"
+        }
+      },
+      {
+        "genus": "ＤＮＡポケモン",
+        "language": {
+          "name": "ja",
+          "url": "https://pokeapi.co/api/v2/language/11/"
+        }
+      }
+    ],
+    "flavor_text_entries": [
+      {
+        "flavor_text": "The DNA of a space virus underwent a\nsudden mutation upon exposure to a\nlaser beam and resulted in DEOXYS.\fThe crystalline organ on this POKéMON’s\nchest appears to be its brain.",
+        "language": {
+          "name": "en",
+          "url": "https://pokeapi.co/api/v2/language/9/"
+        },
+        "version": {
+          "name": "ruby",
+          "url": "https://pokeapi.co/api/v2/version/7/"
+        }
+      },
+      {
+        "flavor_text": "DEOXYS emerged from a virus that came\nfrom space. It is highly intelligent and\nwields psychokinetic powers.\fThis POKéMON shoots lasers from the\ncrystalline organ on its chest.",
+        "language": {
+          "name": "en",
+          "url": "https://pokeapi.co/api/v2/language/9/"
+        },
+        "version": {
+          "name": "sapphire",
+          "url": "https://pokeapi.co/api/v2/version/8/"
+        }
+      },
+      {
+        "flavor_text": "レーザーを　浴びた　宇宙ウィルスの　ＤＮＡが\n突然変異を　起こして　生まれた　ポケモン。\n胸の　水晶体が　脳みそ　らしい。",
+        "language": {
+          "name": "ja",
+          "url": "https://pokeapi.co/api/v2/language/11/"
+        },
+        "version": {
+          "name": "omega-ruby",
+          "url": "https://pokeapi.co/api/v2/version/25/"
+        }
+      },
+      {
+        "flavor_text": "Deoxys surgió a partir de un virus espacial. Tiene un alto nivel\nintelectual y poderes psicoquinéticos. Este Pokémon dispara\nrayos láser por el órgano cristalino que tiene en el torso.",
+        "language": {
+          "name": "es",
+          "url": "https://pokeapi.co/api/v2/language/7/"
+        },
+        "version": {
+          "name": "alpha-sapphire",
+          "url": "https://pokeapi.co/api/v2/version/26/"
+        }
+      },
+      {
+        "flavor_text": "Deoxys emerged from a virus that came from space. It is highly\nintelligent and wields psychokinetic powers. This Pokémon\nshoots lasers from the crystalline organ on its chest.",
+        "language": {
+          "name": "en",
+          "url": "https://pokeapi.co/api/v2/language/9/"
+        },
+        "version": {
+          "name": "alpha-sapphire",
+          "url": "https://pokeapi.co/api/v2/version/26/"
+        }
+      },
+      {
+        "flavor_text": "宇宙ウィルスから　誕生した　ポケモン。\n知能が　高く　超能力を　操る。\n胸の　水晶体から　レーザーを　出す。",
+        "language": {
+          "name": "ja",
+          "url": "https://pokeapi.co/api/v2/language/11/"
+        },
+        "version": {
+          "name": "alpha-sapphire",
+          "url": "https://pokeapi.co/api/v2/version/26/"
+        }
+      }
+    ],
+    "generation": {
+      "name": "generation-iii",
+      "url": "https://pokeapi.co/api/v2/generation/3/"
+    },
+    "is_legendary": false,
+    "is_mythical": true
+  },
+  "pokemon": {
+    "id": 386,
+    "name": "deoxys-normal",
+    "height": 17,
+    "weight": 608,
+    "types": [
+      {
+        "slot": 1,
+        "type": {
+          "name": "psychic",
+          "url": "https://pokeapi.co/api/v2/type/14/"
+        }
+      }
+    ],
+    "abilities": [
+      {
+        "is_hidden": false,
+        "slot": 1,
+        "ability": {
+          "name": "pressure",
+          "url": "https://pokeapi.co/api/v2/ability/46/"
+        }
+      }
+    ],
+    "stats": [
+      {
+        "base_stat": 50,
+        "effort": 0,
+        "stat": {
+          "name": "hp",
+          "url": "https://pokeapi.co/api/v2/stat/1/"
+        }
+      },
+      {
+        "base_stat": 150,
+        "effort": 1,
+        "stat": {
+          "name": "attack",
+          "url": "https://pokeapi.co/api/v2/stat/2/"
+        }
+      },
+      {
+        "base_stat": 50,
+        "effort": 0,
+        "stat": {
+          "name": "defense",
+          "url": "https://pokeapi.co/api/v2/stat/3/"
+        }
+      },
+      {
+        "base_stat": 150,
+        "effort": 1,
+        "stat": {
+          "name": "special-attack",
+          "url": "https://pokeapi.co/api/v2/stat/4/"
+        }
+      },
+      {
+        "base_stat": 50,
+        "effort": 0,
+        "stat": {
+          "name": "special-defense",
+          "url": "https://pokeapi.co/api/v2/stat/5/"
+        }
+      },
+      {
+        "base_stat": 150,
+        "effort": 1,
+        "stat": {
+          "name": "speed",
+          "url": "https://pokeapi.co/api/v2/stat/6/"
+        }
+      }
+    ],
+    "sprites": {
+      "other": {
+        "official-artwork": {
+          "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/386.png"
+        }
+      }
+    }
+  }
+}
