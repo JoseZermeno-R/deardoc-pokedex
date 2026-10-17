@@ -33,10 +33,23 @@ Run from the repository root:
 | `npm run seed`       | Replaces the `pokemon` table with the snapshot. **Deletes all favorites** |
 | `npm run data:fetch` | Regenerates the snapshot from PokeAPI                                     |
 | `npm run build`      | Builds both workspaces                                                    |
-| `npm test`           | Runs the test suites                                                      |
+| `npm test`           | Runs the backend unit tests and the frontend tests                        |
+| `npm run test:e2e`   | Runs the backend e2e tests, on an in-memory database                      |
 | `npm run lint`       | Lints both workspaces with oxlint                                         |
 | `npm run typecheck`  | Type-checks both workspaces, tests included                               |
 | `npm run format`     | Formats the repository with Prettier                                      |
+
+## Web app
+
+The main view lists the Pokémon with their picture, number, name and types, inspired by the [official Pokédex](https://www.pokemon.com/us/pokedex).
+
+- **Search by name** as you type (after a 300 ms pause, or right away with Enter). The search is kept in the URL (`/?search=pika`), so it can be shared and survives a reload.
+- **Load more Pokémon** adds 24 at a time; the button disappears once all results are shown.
+- **No results** shows the challenge's blank 404 page, with a button to clear the search. Unknown URLs show the same 404.
+- **Responsive:** 2 columns on phones, 3 on tablets, 4 on laptops and 6 on large screens. All of them divide the 24 Pokémon loaded per click, so rows are always full.
+- **Accessible:** a labeled search box, `alt` text on every picture, the result count announced to screen readers, real buttons, a visible keyboard focus, and type colors that meet WCAG AA contrast.
+
+In development the browser only talks to Vite (`:5173`), which forwards `/api` to the backend (`:3000`). Both are on the same origin, so the backend needs no CORS configuration.
 
 ## API
 
