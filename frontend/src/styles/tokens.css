@@ -1,0 +1,65 @@
+:root {
+  --color-text: #212121;
+  --color-text-muted: #616161;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f2f2f2;
+  --color-border: #d6d6d6;
+  --color-band: #313131;
+  --color-band-text: #ffffff;
+  --color-accent: #c8102e;
+  --color-primary: #0a66b5;
+  --color-focus: #1a73e8;
+  --color-danger: #b3261e;
+
+  --radius: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --content-max-width: 1400px;
+
+  /*
+   * Pokémon types. Backgrounds are the official Pokédex colors (pokemon.com).
+   * Text is the same hue darkened until it reaches 4.5:1 (WCAG AA); the
+   * official white text fails AA on most of them. Dark and ghost are the
+   * exception: no shade of their hue reaches 4.5:1, white does.
+   */
+  --type-bug: #729f3f;
+  --type-bug-text: #223013;
+  --type-dark: #707070;
+  --type-dark-text: #ffffff;
+  --type-dragon: #53a4cf;
+  --type-dragon-text: #1b3644;
+  --type-electric: #eed535;
+  --type-electric-text: #665c17;
+  --type-fairy: #fdb9e9;
+  --type-fairy-text: #6a4e62;
+  --type-fighting: #d56723;
+  --type-fighting-text: #331908;
+  --type-fire: #fd7d24;
+  --type-fire-text: #592c0d;
+  --type-flying: #3dc7ef;
+  --type-flying-text: #185060;
+  --type-ghost: #7b62a3;
+  --type-ghost-text: #ffffff;
+  --type-grass: #9bcc50;
+  --type-grass-text: #3e5220;
+  --type-ground: #f7de3f;
+  --type-ground-text: #6d621c;
+  --type-ice: #51c4e7;
+  --type-ice-text: #204c5a;
+  --type-normal: #a4acaf;
+  --type-normal-text: #3d4041;
+  --type-poison: #b97fc9;
+  --type-poison-text: #39273e;
+  --type-psychic: #f366b9;
+  --type-psychic-text: #50223d;
+  --type-rock: #a38c21;
+  --type-rock-text: #2c2609;
+  --type-steel: #9eb7b8;
+  --type-steel-text: #3c4646;
+  --type-water: #4592c4;
+  --type-water-text: #122633;
+}
