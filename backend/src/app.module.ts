@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { fileURLToPath } from 'node:url';
-import { AppController } from './app.controller.js';
-import { AppService } from './app.service.js';
+import { FavoritesModule } from './favorites/favorites.module.js';
 import { PokemonModule } from './pokemon/pokemon.module.js';
 
 // backend/data/pokedex.sqlite, resolved the same way from src/ and dist/.
@@ -20,8 +19,7 @@ const DEFAULT_DATABASE_PATH = fileURLToPath(
       synchronize: true,
     }),
     PokemonModule,
+    FavoritesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
