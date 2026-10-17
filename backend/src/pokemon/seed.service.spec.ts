@@ -1,7 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { randomUUID } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { DataSource, Repository } from 'typeorm';
+import { Favorite } from '../favorites/favorite.entity.js';
 import type { PokemonSnapshot } from './pokemon-snapshot.js';
 import { Pokemon } from './pokemon.entity.js';
 import { PokemonModule } from './pokemon.module.js';
@@ -77,5 +79,16 @@ describe('SeedService', () => {
       isHidden: true,
     });
     expect(pikachu.isLegendary).toBe(false);
+  });
+
+  it('deletes every favorite ("nuke and pave")', async () => {
+    await seedService.seed();
+    const favorites = module.get(DataSource).getRepository(Favorite);
+    await favorites.insert({ userId: randomUUID(), pokemonId: 25 });
+
+    await seedService.seed();
+
+    // Emptying the pokemon table cascades to favorites (ON DELETE CASCADE).
+    expect(await favorites.count()).toBe(0);
   });
 });

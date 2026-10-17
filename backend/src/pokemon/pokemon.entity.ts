@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryColumn,
+  type Relation,
+} from 'typeorm';
+import { Favorite } from '../favorites/favorite.entity.js';
 import type {
   PokemonAbility,
   PokemonStats,
@@ -50,4 +57,8 @@ export class Pokemon implements SnapshotPokemon {
 
   @Column('boolean')
   isMythical: boolean;
+
+  /** Not in the snapshot. Loaded only for the current user, to compute isFavorite. */
+  @OneToMany(() => Favorite, (favorite) => favorite.pokemon)
+  favorites: Relation<Favorite[]>;
 }
