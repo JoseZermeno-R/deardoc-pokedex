@@ -5,6 +5,8 @@ A small fullstack Pokédex built for the DearDoc fullstack code challenge: brows
 - **Backend:** NestJS REST API with SQLite (TypeORM). Pokémon data comes from a versioned snapshot of [PokeAPI](https://pokeapi.co/), so the app never calls PokeAPI at runtime.
 - **Frontend:** React + Vite, React Router and TanStack Query, styled with CSS Modules.
 
+![Demo: browsing the Pokédex, marking a favorite, searching for "mew" and loading more Pokémon](docs/demo.gif)
+
 ## Requirements
 
 - Node.js 22.22.3+ or 24.15+ (see `.nvmrc`). The Nest CLI's dependencies require it; older versions install with `EBADENGINE` warnings
