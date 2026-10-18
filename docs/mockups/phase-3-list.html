@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Phase 3 mockups: list and search</title>
+    <link rel="stylesheet" href="mockups.css" />
+  </head>
+  <body>
+    <h1>Phase 3 · List and search</h1>
+    <p class="intro">
+      Mockups made while planning (see docs/plan-3.md). Pictures are
+      placeholders; the type colors are the app's.
+    </p>
+
+    <!-- Proposal A: desktop -->
+    <p class="label">
+      Proposal A · desktop, 4 columns<span class="tag chosen">Chosen</span>
+    </p>
+    <div class="frame">
+      <div class="header">
+        <svg width="26" height="26" viewBox="0 0 32 32">
+          <circle
+            cx="16"
+            cy="16"
+            r="14"
+            fill="#fff"
+            stroke="#212121"
+            stroke-width="2.5"
+          />
+          <path
+            d="M2 16a14 14 0 0 1 28 0Z"
+            fill="#c8102e"
+            stroke="#212121"
+            stroke-width="2.5"
+          />
+          <circle
+            cx="16"
+            cy="16"
+            r="4.5"
+            fill="#fff"
+            stroke="#212121"
+            stroke-width="2.5"
+          />
+        </svg>
+        Pokédex
+      </div>
+      <div class="band">
+        <div class="search-label">Search by name</div>
+        <div class="search">
+          <div class="input">pika</div>
+          <div class="search-button">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m16.5 16.5 4 4" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <p class="count">Showing 24 of 1,025 Pokémon</p>
+        <div class="grid cols-4">
+          <div>
+            <div class="tile">
+              <svg
+                width="64"
+                height="64"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="16" cy="16" r="13" />
+                <path d="M3 16h8m10 0h8" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+            </div>
+            <div class="number">#0001</div>
+            <div class="name">Bulbasaur</div>
+            <div class="pills">
+              <span class="pill grass">Grass</span
+              ><span class="pill poison">Poison</span>
+            </div>
+          </div>
+          <div>
+            <div class="tile">
+              <svg
+                width="64"
+                height="64"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="16" cy="16" r="13" />
+                <path d="M3 16h8m10 0h8" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+            </div>
+            <div class="number">#0004</div>
+            <div class="name">Charmander</div>
+            <div class="pills"><span class="pill fire">Fire</span></div>
+          </div>
+          <div>
+            <div class="tile">
+              <svg
+                width="64"
+                height="64"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="16" cy="16" r="13" />
+                <path d="M3 16h8m10 0h8" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+            </div>
+            <div class="number">#0007</div>
+            <div class="name">Squirtle</div>
+            <div class="pills"><span class="pill water">Water</span></div>
+          </div>
+          <div>
+            <div class="tile">
+              <svg
+                width="64"
+                height="64"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="16" cy="16" r="13" />
+                <path d="M3 16h8m10 0h8" />
+                <circle cx="16" cy="16" r="4" />
+              </svg>
+            </div>
+            <div class="number">#0025</div>
+            <div class="name">Pikachu</div>
+            <div class="pills"><span class="pill electric">Electric</span></div>
+          </div>
+        </div>
+        <div class="center"><div class="primary">Load more Pokémon</div></div>
+      </div>
+    </div>
+
+    <!-- Proposal A: tablet and phone -->
+    <div class="row">
+      <div style="flex: 1.6">
+        <p class="label">Proposal A · tablet, 3 columns</p>
+        <div class="frame">
+          <div class="band" style="padding: 14px">
+            <div class="search">
+              <div class="input placeholder">Search by name</div>
+              <div class="search-button">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m16.5 16.5 4 4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="grid cols-3">
+              <div>
+                <div class="tile">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="16" cy="16" r="13" />
+                    <path d="M3 16h8m10 0h8" />
+                    <circle cx="16" cy="16" r="4" />
+                  </svg>
+                </div>
+                <div class="number">#0001</div>
+                <div class="name">Bulbasaur</div>
+              </div>
+              <div>
+                <div class="tile">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="16" cy="16" r="13" />
+                    <path d="M3 16h8m10 0h8" />
+                    <circle cx="16" cy="16" r="4" />
+                  </svg>
+                </div>
+                <div class="number">#0002</div>
+                <div class="name">Ivysaur</div>
+              </div>
+              <div>
+                <div class="tile">
+                  <svg
+                    width="48"
+                    height="48"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="16" cy="16" r="13" />
+                    <path d="M3 16h8m10 0h8" />
+                    <circle cx="16" cy="16" r="4" />
+                  </svg>
+                </div>
+                <div class="number">#0003</div>
+                <div class="name">Venusaur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex: 1">
+        <p class="label">Proposal A · phone, 2 columns</p>
+        <div class="frame" style="max-width: 300px">
+          <div class="band" style="padding: 12px">
+            <div class="search">
+              <div class="input placeholder">Search</div>
+              <div class="search-button">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m16.5 16.5 4 4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="content" style="padding: 12px">
+            <div class="grid cols-2">
+              <div>
+                <div class="tile">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="16" cy="16" r="13" />
+                    <path d="M3 16h8m10 0h8" />
+                    <circle cx="16" cy="16" r="4" />
+                  </svg>
+                </div>
+                <div class="number">#0001</div>
+                <div class="name">Bulbasaur</div>
+              </div>
+              <div>
+                <div class="tile">
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="16" cy="16" r="13" />
+                    <path d="M3 16h8m10 0h8" />
+                    <circle cx="16" cy="16" r="4" />
+                  </svg>
+                </div>
+                <div class="number">#0002</div>
+                <div class="name">Ivysaur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proposal B -->
+    <p class="label">
+      Proposal B · red Pokédex header, bordered cards<span class="tag dropped"
+        >Dropped</span
+      >
+    </p>
+    <div class="frame">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 14px 20px;
+          background: #c8102e;
+          color: #fff;
+        "
+      >
+        <span style="font-size: 20px; font-weight: 600">Pokédex</span>
+        <div
+          style="
+            flex: 1;
+            height: 38px;
+            padding: 0 16px;
+            border-radius: 999px;
+            background: #fff;
+            color: #9e9e9e;
+            line-height: 38px;
+          "
+        >
+          Search Pokémon by name
+        </div>
+      </div>
+      <div class="content">
+        <div class="grid cols-4">
+          <div
+            style="
+              padding: 12px;
+              border: 1px solid var(--border);
+              border-radius: 12px;
+              text-align: center;
+            "
+          >
+            <div class="number" style="margin: 0; text-align: right">#0001</div>
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="#bdbdbd"
+              stroke-width="2"
+            >
+              <circle cx="16" cy="16" r="13" />
+              <path d="M3 16h8m10 0h8" />
+              <circle cx="16" cy="16" r="4" />
+            </svg>
+            <div class="name">Bulbasaur</div>
+            <div class="pills" style="justify-content: center">
+              <span class="pill grass">Grass</span>
+            </div>
+          </div>
+          <div
+            style="
+              padding: 12px;
+              border: 1px solid var(--border);
+              border-radius: 12px;
+              text-align: center;
+            "
+          >
+            <div class="number" style="margin: 0; text-align: right">#0004</div>
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="#bdbdbd"
+              stroke-width="2"
+            >
+              <circle cx="16" cy="16" r="13" />
+              <path d="M3 16h8m10 0h8" />
+              <circle cx="16" cy="16" r="4" />
+            </svg>
+            <div class="name">Charmander</div>
+            <div class="pills" style="justify-content: center">
+              <span class="pill fire">Fire</span>
+            </div>
+          </div>
+          <div
+            style="
+              padding: 12px;
+              border: 1px solid var(--border);
+              border-radius: 12px;
+              text-align: center;
+            "
+          >
+            <div class="number" style="margin: 0; text-align: right">#0007</div>
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="#bdbdbd"
+              stroke-width="2"
+            >
+              <circle cx="16" cy="16" r="13" />
+              <path d="M3 16h8m10 0h8" />
+              <circle cx="16" cy="16" r="4" />
+            </svg>
+            <div class="name">Squirtle</div>
+            <div class="pills" style="justify-content: center">
+              <span class="pill water">Water</span>
+            </div>
+          </div>
+          <div
+            style="
+              padding: 12px;
+              border: 1px solid var(--border);
+              border-radius: 12px;
+              text-align: center;
+            "
+          >
+            <div class="number" style="margin: 0; text-align: right">#0025</div>
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="#bdbdbd"
+              stroke-width="2"
+            >
+              <circle cx="16" cy="16" r="13" />
+              <path d="M3 16h8m10 0h8" />
+              <circle cx="16" cy="16" r="4" />
+            </svg>
+            <div class="name">Pikachu</div>
+            <div class="pills" style="justify-content: center">
+              <span class="pill electric">Electric</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- States -->
+    <p class="label">States (for the chosen proposal)</p>
+    <div class="states">
+      <div
+        class="frame state"
+        style="align-items: stretch; justify-content: flex-start"
+      >
+        <div class="message" style="text-align: left">Loading</div>
+        <div class="grid cols-2">
+          <div>
+            <div class="skeleton" style="aspect-ratio: 1 / 1"></div>
+            <div
+              class="skeleton"
+              style="width: 70%; height: 12px; margin-top: 8px"
+            ></div>
+          </div>
+          <div>
+            <div class="skeleton" style="aspect-ratio: 1 / 1"></div>
+            <div
+              class="skeleton"
+              style="width: 60%; height: 12px; margin-top: 8px"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="frame state">
+        <div class="big">404</div>
+        <div class="message">No Pokémon match “zzz”.</div>
+        <div class="secondary">Clear search</div>
+      </div>
+      <div class="frame state">
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#b3261e"
+          stroke-width="2"
+          stroke-linejoin="round"
+        >
+          <path d="M12 3 2 21h20Z" />
+          <path d="M12 10v5M12 18v.01" stroke-linecap="round" />
+        </svg>
+        <div class="danger">Couldn't load Pokémon.</div>
+        <div class="secondary">Try again</div>
+      </div>
+    </div>
+  </body>
+</html>
