@@ -3,6 +3,7 @@ import { NotFound } from '../components/NotFound';
 import { PokemonCard } from '../components/PokemonCard';
 import { SearchBar } from '../components/SearchBar';
 import { PAGE_SIZE, usePokemonList } from '../hooks/usePokemonList';
+import buttons from '../styles/buttons.module.css';
 import styles from './PokedexPage.module.css';
 
 const numberFormat = new Intl.NumberFormat('en-US');
@@ -39,7 +40,7 @@ export function PokedexPage() {
             <p>Couldn't load Pokémon.</p>
             <button
               type="button"
-              className={styles.secondaryButton}
+              className={buttons.secondary}
               onClick={() => list.refetch()}
             >
               Try again
@@ -58,7 +59,7 @@ export function PokedexPage() {
         <NotFound message={`No Pokémon match “${search}”.`}>
           <button
             type="button"
-            className={styles.secondaryButton}
+            className={buttons.secondary}
             onClick={() => handleSearch('')}
           >
             Clear search
@@ -89,7 +90,7 @@ export function PokedexPage() {
             )}
             <button
               type="button"
-              className={styles.primaryButton}
+              className={buttons.primary}
               onClick={() => list.fetchNextPage()}
               disabled={list.isFetchingNextPage}
               aria-busy={list.isFetchingNextPage}

@@ -63,39 +63,6 @@
   color: var(--color-danger);
 }
 
-.primaryButton,
-.secondaryButton {
-  min-height: 44px;
-  padding: 0 var(--space-6);
-  border-radius: var(--radius);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.primaryButton {
-  border: 0;
-  background: var(--color-primary);
-  color: #ffffff;
-}
-
-.primaryButton:hover:not(:disabled) {
-  filter: brightness(0.9);
-}
-
-.primaryButton:disabled {
-  cursor: progress;
-}
-
-.secondaryButton {
-  border: 2px solid var(--color-border);
-  background: var(--color-surface);
-  color: var(--color-text);
-}
-
-.secondaryButton:hover {
-  background: var(--color-surface-muted);
-}
-
 .error {
   display: flex;
   flex-direction: column;
