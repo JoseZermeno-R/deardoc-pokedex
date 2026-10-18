@@ -109,6 +109,35 @@ describe('GET /api/pokemon', () => {
       expect(items.map((p) => p.name)).toEqual(['pikachu']);
     });
 
+    // Found by trying the Pokémon with unusual names.
+    it.each([
+      ["farfetch'd", 'farfetchd'], // a straight apostrophe; the name has ’
+      ['mr mime', 'mr-mime'], // a space instead of ". "
+      ['MR. MIME', 'mr-mime'],
+      ['type null', 'type-null'], // no colon
+      ['ho oh', 'ho-oh'], // a space instead of the hyphen
+      ['porygon z', 'porygon-z'],
+      ['FLABÉBÉ', 'flabebe'], // uppercase accents, which LIKE doesn't fold
+      ['nidoran f', 'nidoran-f'],
+    ])(
+      'finds %s ignoring punctuation, spaces and accents',
+      async (search, name) => {
+        const { items } = await list({ search });
+
+        expect(items.map((p) => p.name)).toContain(name);
+      },
+    );
+
+    it.each(['♀', 'nidoran♀'])(
+      'matches symbols as typed: %s finds only Nidoran♀',
+      async (search) => {
+        const { items } = await list({ search });
+
+        // Compacting would drop the ♀ and also find Nidoran♂.
+        expect(items.map((p) => p.name)).toEqual(['nidoran-f']);
+      },
+    );
+
     it('counts the matches across all pages', async () => {
       const page = await list({ search: 'a', limit: 5 });
 

@@ -5,6 +5,15 @@ import type { ListPokemonQuery } from './list-pokemon.query.js';
 import { Pokemon } from './pokemon.entity.js';
 import type { PokemonDetail, PokemonPage } from './pokemon.types.js';
 
+/** "Farfetch'd" → "farfetchd", "MR. MIME" → "mrmime", "Flabébé" → "flabebe" */
+function toCompact(text: string): string {
+  return text
+    .normalize('NFD') // é → e + a combining accent
+    .replace(/\p{Diacritic}/gu, '') // drop the accents
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, ''); // drop spaces, punctuation and symbols
+}
+
 @Injectable()
 export class PokemonService {
   constructor(
@@ -20,11 +29,25 @@ export class PokemonService {
 
     const term = search?.trim();
     if (term) {
+      // The display name, as typed: catches symbols like ♀ and ♂.
       // ESCAPE '!' makes % and _ in the search match literally.
-      query.where(
-        "(pokemon.name LIKE :pattern ESCAPE '!' OR pokemon.displayName LIKE :pattern ESCAPE '!')",
-        { pattern: `%${term.replace(/[%_!]/g, '!$&')}%` },
-      );
+      const displayNameMatch = "pokemon.displayName LIKE :pattern ESCAPE '!'";
+      const pattern = `%${term.replace(/[%_!]/g, '!$&')}%`;
+
+      // The slug without hyphens, against the term without punctuation,
+      // spaces or accents: "farfetch'd", "mr mime" and "FLABÉBÉ" find
+      // farfetchd, mr-mime and flabebe. Slugs only have a-z, 0-9 and hyphens.
+      // Not for symbols (\p{S}, like ♀): compacting would drop them, and
+      // "nidoran♀" would also find Nidoran♂.
+      const compact = /\p{S}/u.test(term) ? '' : toCompact(term);
+      if (compact) {
+        query.where(
+          `(REPLACE(pokemon.name, '-', '') LIKE :compact OR ${displayNameMatch})`,
+          { compact: `%${compact}%`, pattern },
+        );
+      } else {
+        query.where(displayNameMatch, { pattern });
+      }
     }
 
     const [pokemon, total] = await query

@@ -43,7 +43,7 @@ Run from the repository root:
 
 The main view lists the Pokémon with their picture, number, name and types, inspired by the [official Pokédex](https://www.pokemon.com/us/pokedex).
 
-- **Search by name** as you type (after a 300 ms pause, or right away with Enter). The search is kept in the URL (`/?search=pika`), so it can be shared and survives a reload.
+- **Search by name** as you type (after a 300 ms pause, or right away with Enter). It ignores case, accents, spaces and punctuation, so "farfetch'd", "mr mime" and "flabebe" find Farfetch’d, Mr. Mime and Flabébé. The search is kept in the URL (`/?search=pika`), so it can be shared and survives a reload.
 - **Load more Pokémon** adds 24 at a time; the button disappears once all results are shown.
 - **No results** shows the challenge's blank 404 page, with a button to clear the search. Unknown URLs show the same 404.
 - **Responsive:** 2 columns on phones, 3 on tablets, 4 on laptops and 6 on large screens. All of them divide the 24 Pokémon loaded per click, so rows are always full.
@@ -57,12 +57,12 @@ In development the browser only talks to Vite (`:5173`), which forwards `/api` t
 
 All endpoints are under `/api`. Every response comes from the database; nothing calls PokeAPI at runtime.
 
-| Method   | Path                            | Description                                                              |
-| -------- | ------------------------------- | ------------------------------------------------------------------------ |
-| `GET`    | `/pokemon?search=&page=&limit=` | Paginated list, ordered by id. `search` matches the name or display name |
-| `GET`    | `/pokemon/:name`                | Detail by name, e.g. `/pokemon/mr-mime`                                  |
-| `PUT`    | `/favorites/:pokemonId`         | Marks a favorite. Idempotent; `204`                                      |
-| `DELETE` | `/favorites/:pokemonId`         | Unmarks a favorite. Idempotent; `204`                                    |
+| Method   | Path                            | Description                                                                                                              |
+| -------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `GET`    | `/pokemon?search=&page=&limit=` | Paginated list, ordered by id. `search` matches the name or display name, ignoring case, accents, spaces and punctuation |
+| `GET`    | `/pokemon/:name`                | Detail by name, e.g. `/pokemon/mr-mime`                                                                                  |
+| `PUT`    | `/favorites/:pokemonId`         | Marks a favorite. Idempotent; `204`                                                                                      |
+| `DELETE` | `/favorites/:pokemonId`         | Unmarks a favorite. Idempotent; `204`                                                                                    |
 
 **User:** as the challenge suggests, there is no authorization system: on the first request the app creates a random UUID, stores it in `localStorage` (`pokedex.userId`) and sends it to the API in the `X-User-Id` header. Each user only reads and changes their own favorites. The header is optional when reading (without it, `isFavorite` is always `false`) and required for `PUT` and `DELETE`. Anyone who knows a UUID can act as that user, which is fine for this challenge; a real deployment would take the user from a verified token instead.
 
